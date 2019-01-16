@@ -1,0 +1,218 @@
+/* font-family: 'Pacifico', cursive;
+font-family: 'Cabin', sans-serif; */
+
+body {
+    max-width: 960px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    clear: both;
+    font-family: 'Cabin', sans-serif;
+    background-image: url("grey_@2x.png");
+}
+
+img {
+    height: 300px;
+    width: 100%;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(50%);
+    margin-bottom: 20px;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    box-sizing: border-box;
+    color: white;
+    max-width: 100%;
+    padding: 0;
+}
+  
+#bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    margin-left: 15px;
+    font-size: 75px;
+    color: white;
+    font-family: 'Pacifico', cursive;
+}
+
+.top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    color: black;
+}
+
+#clock {
+    width: 75%;
+}
+
+.topContainer {
+    max-width: 960px;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+    clear: both;
+    background-color: white;
+}
+
+.bottomContainer {
+    max-width: 960px;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+    clear: both;
+    font-family: 'Cabin', sans-serif; 
+}
+
+#jumbotron {
+    background: linear-gradient(to right, gray , purple);;
+    max-width: 100%;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-family: 'Pacifico', cursive;
+    margin: 0 0 20px 0;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: 'Cabin', sans-serif;
+    text-align: left;
+}
+
+th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: center;
+}
+  
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+td {
+    font-size: 12px;
+    text-align: left;
+    padding: 10px;
+}
+
+#demo {
+    font-size: 13px;
+}
+
+#inputData {
+    background-color: white;
+    font-size: 13px;
+}
+
+tr {
+    font-size: 15px;
+    text-align: left;
+}
+    
+#addUser {
+    max-width: 960px;
+    width: 25%;
+    text-align: center;
+    background: olive;
+    font-size: 18px;
+    border: 0px solid;
+    font-family: 'Cabin', sans-serif;
+}
+
+.topCard {
+    max-width: 960px;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+    clear: both;
+    font-family: 'Cabin', sans-serif;
+}
+
+#boxHeader {
+    background-color: olivedrab;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 0px;
+    font-family: 'Cabin', sans-serif;
+}
+
+#box2Header {
+    background-color: olive;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 0px;
+    font-family: 'Cabin', sans-serif;
+}
+
+label {
+    margin-bottom: 0rem;
+    font-size: 14px;
+}
+
+.form-control,
+::placeholder {
+    font-size: 14px;
+}
+
+button {
+    font-size: 20px;
+    border: 0px solid;
+    background-color: transparent;
+}
+
+#addButton {
+    width: 150px;
+}
+
+/* frequency slider code */
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+  }
+  
+  /* The slider itself */
+  .slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 15px; /* Specified height */
+    border-radius: 5px;
+    background: white; /* white background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
+  
+  /* Mouse-over effects */
+  .slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    border-radius: 50%;
+    background: olive; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    border-radius: 50%;
+    background: #4CAF50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }

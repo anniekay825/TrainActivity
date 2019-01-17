@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/timepicker.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/main.css" />
+
+    <title>Train Schedules</title>
+</head>
+
+<body>
+    <div>
+        <div class="container">
+            <img src="assets/highlands.jpg" alt="highlands" style="width:100%;">
+            <div id="bottom-left" class="strokeme">Train Schedules</div>
+            <div class="top-right">
+                <iframe src="http://free.timeanddate.com/clock/i6lbpj1l/n867/szw80/szh80/hoc6b8e23/hbw4/cf100/hgr0/fav0/fiv0/mqc000/mqs3/mql25/mqw6/mqd96/mhc000/mhs3/mhl20/mhw6/mhd96/mmc000/mms3/mml10/mmw2/mmd96/hhw16/hmw16/hmr4/hsc000/hss3/hsl90"
+                    frameborder="0" width="80" height="80"></iframe>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="topCard">
+        <p id="boxHeader">&nbsp Current Train Schedule</p>
+        <div class="topContainer">
+            <table id="schedule-body">
+                <thead>
+                    <tr>
+                        <th width="300">Train Name</th>
+                        <th width="200">Destination</th>
+                        <th width="100">Frequency (min)</th>
+                        <th width="100">Next Arrival</th>
+                        <th width="100">Minutes Away</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br>
+
+    <div class="topCard">
+        <p id="box2Header">&nbsp Add Train</p>
+        <div class="bottomContainer">
+            <table>
+                <tr>
+                    <td>
+                        <label for="Train Name">Train Name</label>
+                        <input type="text" class="form-control" id="train-name"> </td>
+                    <td>
+                        <label for="Destination">Destination</label>
+                        <input class="form-control" id="destination" type="text"></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td>
+                        <label for="time">First Train time (HH:MM / 24hour)</label>
+                        <input type="text" id="first-train-time" placeholder="Time">
+                    </td>
+                    <td>
+                        <label for="frequency">Frequency (in min) &nbsp</label> <span id="frequency">&nbsp
+                        </span>
+                        <input type="range" min="1" max="360" value="180" class="slider" id="frequency2" text-align="center">
+                        <br>
+                    </td>
+                </tr>
+            </table>
+
+            <div id="addButton">
+                <button type="submit" class="btn btn-primary rounded" id="submit-button">Add new Train</button></div>
+        </div>
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-database.js"></script>
+        <script src="assets/moment.js"></script>
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+
+        <script src="assets/timepicker.min.js"></script>
+        <script src="assets/trainSchedule.js"></script>
+</body>
+
+</html>

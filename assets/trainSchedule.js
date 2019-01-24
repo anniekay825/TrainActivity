@@ -26,7 +26,7 @@ $("#submit-button").on("click", function(event) {
 	var trainName = $("#train-name").val().trim();
 	var destination = $("#destination").val().trim();
 	var firstTrainTime = $("#first-train-time").val().trim();
-	var trainFrequency = $("#frequency2").val().trim();
+	var trainFrequency = $("#myRange").val().trim();
 
 	//Print the values that the user enters in the text boxes to the console for debugging purposes.
 	console.log(trainName);
@@ -38,7 +38,7 @@ var newTrain = {
     name: trainName,
     dest: destination,
     start: firstTrainTime,
-    freq: frequency
+    freq: trainFrequency
   };
 
   database.ref().push(newTrain);
@@ -51,29 +51,21 @@ var newTrain = {
   $("#train-name").val("");
   $("#destination").val("");
   $("#first-train-time").val("");
-  $("#frequency2").val("");
+  $("#myRange").val("");
 });
 
 database.ref().on("child_added", function (childSnapshot) {
 	console.log(childSnapshot.val());
 
 	//Set variables for form input field values equal to the stored values in firebase.
-	var trainName = childSnapshot.val().train-name;
-	var destination = childSnapshot.val().destination;
-	var firstTrainTime = childSnapshot.val().first-train-time;
-	var trainFrequency = childSnapshot.val().frequency2;
+	var trainName = childSnapshot.val().name;
+	var destination = childSnapshot.val().dest;
+	var firstTrainTime = childSnapshot.val().start;
+	var trainFrequency = childSnapshot.val().freq;
 	var nextTrain = childSnapshot.val().nextTrain;
 	var tMinutesTillTrain = childSnapshot.val().tMinutesTillTrain;
 	var currentTime = childSnapshot.val().currentTime;
 
-	//Train info
-	console.log(trainName);
-	console.log(destination);
-	console.log(firstTrainTime);
-	console.log(nextTrain);
-	console.log(tMinutesTillTrain);
-	console.log(trainFrequency);
-	console.log(currentTime);
 
 	//Moment JS math caclulations to determine train next arrival time and the number of minutes away from destination.
 	// First Time (pushed back 1 year to make sure it comes before current time)
@@ -100,13 +92,21 @@ database.ref().on("child_added", function (childSnapshot) {
 	var nextTrain = moment().add(tMinutesTillTrain, "minutes").format("hh:mm A");
 	console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
 
+	//Train info
+	console.log(trainName);
+	console.log(destination);
+	console.log(firstTrainTime);
+	console.log(nextTrain);
+	console.log(tMinutesTillTrain);
+	console.log(trainFrequency);
+	console.log(currentTime);
 
 	//Update the HTML (schedule table) to reflect the latest stored values in the firebase database.
 	var tRow = $("<tr>").append(
 		$("<td>").text(trainName),
 		$("<td>").text(destination),
-		$("<td>").text(nextTrain),
 		$("<td>").text(trainFrequency),
+		$("<td>").text(nextTrain),
 		$("<td>").text(tMinutesTillTrain)
 	);
 
@@ -131,8 +131,8 @@ timepicker.on('change', function (evt) {
 
 // time slider info
 
-var slider = document.getElementById("frequency2");
-var output = document.getElementById("frequency");
+var slider = document.getElementById("myRange");
+var output = document.getElementById("value");
 output.innerHTML = slider.value; // Display the default slider value
 
 // Update the current slider value (each time you drag the slider handle)
